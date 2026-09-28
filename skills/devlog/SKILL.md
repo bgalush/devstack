@@ -24,8 +24,10 @@ it answers (or fails to answer) a question, and inconclusive is a legitimate out
 Before creating or updating a record:
 
 1. Read the repository's `AGENTS.md` and any more specific instructions.
-2. Read `devlog/adr/000-template.md`, `devlog/plan/000-template.md`, or
-   `devlog/dig/000-template.md`.
+2. Read the repository's `devlog/adr/000-template.md`, `devlog/plan/000-template.md`, or
+   `devlog/dig/000-template.md`. If the repository does not ship one, use the bundled
+   fallback template at `templates/adr/000-template.md`, `templates/plan/000-template.md`,
+   or `templates/dig/000-template.md` relative to this skill.
 3. Inspect several recent records of the same type.
 4. Follow repository-local fields, statuses, and terminology when they are stricter than this
    skill.
@@ -153,43 +155,17 @@ such as `Deferred post-1.0`. Explain scheduling details in the body.
 
 ## Fallback ADR Template
 
-```markdown
-# ADR-NNN: Title
-
-Status: Proposed
-Related: [PLAN-NNN](../plan/NNN-title.md)
-
-## Context
-
-## Decision
-
-## Rationale
-
-## Consequences
-```
-
-Remove optional fields that do not apply. The rationale should compare credible alternatives,
+The fallback ADR template is `templates/adr/000-template.md` relative to this skill; it is
+the single source of truth for the fallback shape. Remove optional fields that do not
+apply. The rationale should compare credible alternatives,
 not merely restate the decision. Consequences should include costs and follow-up work as well
 as benefits.
 
 ## Fallback DIG Template
 
-```markdown
-# DIG-NNN: Title
-
-Status: Open
-Question: one-sentence question this investigation answers
-Artifacts: devlog/artifacts/NNN-sample-data.json
-
-## Approach
-
-## Findings
-
-## Sources
-```
-
-Remove sections that do not apply; `Question:` is required and `Sources` is strongly
-encouraged (URLs, papers, tickets, links to data). On closing, add an `Outcome:` line to
+The fallback DIG template is `templates/dig/000-template.md` relative to this skill; it is
+the single source of truth for the fallback shape. Remove sections that do not apply;
+`Question:` is required and `Sources` is strongly encouraged (URLs, papers, tickets, links to data). On closing, add an `Outcome:` line to
 the header or a final `## Outcome` section stating how the question was resolved and
 linking any ADR/PLAN it fed into.
 
@@ -221,24 +197,9 @@ has no committed artifacts.
 
 ## Fallback PLAN Template
 
-```markdown
-# PLAN-NNN: Title
-
-Status: Not Started
-Related: [ADR-NNN](../adr/NNN-title.md)
-
-## Goal
-
-## Work
-
-### Phase 1: Title
-
-**Status:** Not Started
-
-## Findings
-```
-
-Remove optional fields and an empty `Findings` section. Define observable completion in
+The fallback PLAN template is `templates/plan/000-template.md` relative to this skill; it
+is the single source of truth for the fallback shape. Remove optional fields and an empty
+`Findings` section. Define observable completion in
 `Goal`. Keep `Work` at a high level; use the project's issue tracker or task system for
 short-lived implementation details.
 
