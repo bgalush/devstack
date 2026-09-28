@@ -104,16 +104,7 @@ references when a target is available:
 
 ## Header Fields
 
-Every record requires:
-
-- `Status:` using the repository's lifecycle.
-- `Version:` derived from the repository's current release/versioning convention.
-
-Do not invent a version, use `unknown`, or assume `v0.0.0`. Determine it from tags, release
-files, build configuration, or repository instructions. If it cannot be determined, ask.
-
-A DIG is lighter ceremony: `Status:` is required, `Version:` is optional and may be omitted
-for purely local investigation work.
+Every record requires `Status:` using the repository's lifecycle.
 
 Optional relationship fields have distinct meanings:
 
@@ -166,7 +157,6 @@ such as `Deferred post-1.0`. Explain scheduling details in the body.
 # ADR-NNN: Title
 
 Status: Proposed
-Version: vX.Y.Z
 Related: [PLAN-NNN](../plan/NNN-title.md)
 
 ## Context
@@ -189,7 +179,7 @@ as benefits.
 
 Status: Open
 Question: one-sentence question this investigation answers
-Artifacts: dig/artifacts/NNN-sample-data.json
+Artifacts: devlog/artifacts/NNN-sample-data.json
 
 ## Approach
 
@@ -225,9 +215,9 @@ not by default. Prefer, in order:
 
 If an artifact absolutely must be committed, place it either in the part of the repository
 that owns it (fixtures, test data, documentation) or under `devlog/artifacts/`, and
-reference it explicitly in the DIG via the `Artifacts:` field, which lists the relative
-path of every committed artifact. Omit `Artifacts:` when the DIG has no committed
-artifacts.
+reference it explicitly in the DIG via the `Artifacts:` field, which lists the
+repository-root-relative path of every committed artifact. Omit `Artifacts:` when the DIG
+has no committed artifacts.
 
 ## Fallback PLAN Template
 
@@ -235,7 +225,6 @@ artifacts.
 # PLAN-NNN: Title
 
 Status: Not Started
-Version: vX.Y.Z
 Related: [ADR-NNN](../adr/NNN-title.md)
 
 ## Goal
@@ -268,7 +257,7 @@ When implementation changes a decision or plan:
 
 ## Common Pitfalls
 
-1. Using one sequence across ADRs and PLANs instead of independent sequences.
+1. Using one sequence across ADRs, PLANs, and DIGs instead of independent sequences.
 2. Choosing the next number from record count without checking filenames and headings.
 3. Mixing `ADR NNN`, `ADR-NNN`, and bare numbers in new references.
 4. Treating `Accepted` and `Implemented` as synonyms.
@@ -286,7 +275,6 @@ When implementation changes a decision or plan:
 - [ ] The number is the next available value in the correct independent sequence.
 - [ ] Filename, H1, and all references use the same `ADR-NNN` or `PLAN-NNN`.
 - [ ] Status accurately reflects the documented lifecycle.
-- [ ] Version was derived from repository evidence.
 - [ ] Relationship fields are meaningful, linked, and reciprocal where required.
 - [ ] ADR rationale covers alternatives and trade-offs, PLAN goal defines completion, or DIG
       states its question and, if closed, its outcome with sources cited.
