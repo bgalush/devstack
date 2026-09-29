@@ -83,6 +83,11 @@ Research may generate artifacts such as JSON or CSV blobs, screenshots, PDFs, vi
 | `Open` | Not yet started, or is in progress |
 | `Closed` | Research concluded, results recorded |
 
+## Best Practices
+
+- **Agent Context:** Maintain a high-density "Design Status Overview" in the project's `AGENTS.md` referencing key ADRs and PLANs to provide a fast-path for agents to grasp the architectural state.
+- **Temporal Anchoring:** Set the `Release:` field in every record to the version tag it was **originally committed in** to avoid applying stale rationale to new code.
+
 ## Verify
 
 - [ ] `NNN` was rechecked against filenames and headings immediately before writing.
@@ -90,3 +95,4 @@ Research may generate artifacts such as JSON or CSV blobs, screenshots, PDFs, vi
 - [ ] Status is one value from the documented lifecycle and matches reality.
 - [ ] Supersessions and amendments are linked both ways; devlog indexes are updated.
 - [ ] Preserve history: Do not rewrite an old record as though the new state had always been true.
+- [ ] AGENTS.md is updated to reflect the current design status.
