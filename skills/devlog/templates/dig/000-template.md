@@ -1,8 +1,13 @@
+---
+artifacts:
+  - devlog/artifacts/example-data.json
+  - scripts/fetch-data.py
+---
+
 # DIG-NNN: Title
 
 Status: Open
 Question: one-sentence question this investigation answers
-Artifacts: devlog/artifacts/NNN-sample-data.json
 
 ## Approach
 
